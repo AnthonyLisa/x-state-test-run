@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  padding: 2rem;
+
+  .header {
+    display: grid;
+    align-items: center;
+    grid-template-areas: "back title close";
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+
+    .title {
+      grid-area: title;
+      margin: 0;
+    }
+
+    .close {
+      grid-area: close;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    .back {
+      grid-area: back;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+
+  .content {
+    height: 100%;
+  }
+
+  .footer {
+    align-self: center;
+
+    .next {
+      &.hidden {
+        opacity: 0;
+      }
+
+      &.disabled {
+        background-color: grey;
+      }
+    }
+  }
+}
